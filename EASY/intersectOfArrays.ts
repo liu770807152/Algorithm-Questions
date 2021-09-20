@@ -28,7 +28,7 @@
 // 这样就导致了我们需要知道每个值出现的次数，
 // 所以映射关系就成了<元素,出现次数>。剩下的就是顺利成章的解题。
 
-function intersect(nums1, nums2) {
+function intersect(nums1: number[], nums2: number[]): number[] {
     // 也可以用set
     let m0 = new Map();
     for (let num of nums1) {
@@ -65,7 +65,7 @@ function intersect(nums1, nums2) {
 //<2> 如果两个指针的元素不相等，我们将小的一个指针后移。
 //<3> 反复以上步骤。
 
-function intersect2(nums1, nums2) {
+function intersect2(nums1: number[], nums2: number[]): number[] {
     let i = 0, j = 0;
     const result = [];
     while (i < nums1.length && j < nums2.length) {

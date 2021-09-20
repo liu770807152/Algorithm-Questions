@@ -27,36 +27,38 @@ assert deserialize(serialize(node)).left.left.val == 'left.left'
 // We can then infer leaf nodes by their form 'val # #' and thus get the structure of the tree that way. Then our tree would look like 1 2 # # 3 # #.
 const assert = require('assert');
 
-class Node {
-    constructor(val, left=null, right = null) {
+class CustomNode {
+    right: any;
+    val: any;
+    left: any;
+    constructor(val, left = null, right = null) {
         this.val = val;
         this.left = left;
         this.right = right;
     }
-
 }
 
-function serialize(root) {
+function serialize(root: CustomNode) {
     if (!root) {
-        return "#";
+        return '#';
     }
-    return String(root.val)+','+serialize(root.left)+','+serialize(root.right);
+    return String(root.val) + ',' + serialize(root.left) + ',' + serialize(root.right);
 }
 
-function deserialize(data) {
+function deserialize(data: string) {
     function helper(values) {
         const val = values.next().value;
-        if (val === "#") {
+        if (val === '#') {
             return null;
         }
-        const node = new Node(val);
+        const node = new CustomNode(val);
         node.left = helper(values);
         node.right = helper(values);
         return node;
     }
     function* nodeIterator(start = 0, end = Infinity, step = 1) {
         let values = [];
-        let cur = "";
+        let cur = '';
         for (let i = start; i < end; i += step) {
             if (data[i] !== ',') {
                 cur += data[i];
@@ -65,7 +67,7 @@ function deserialize(data) {
                 }
             } else {
                 values.push(cur);
-                cur = "";
+                cur = '';
             }
         }
         for (let v of values) {
@@ -76,5 +78,5 @@ function deserialize(data) {
     return helper(values);
 }
 
-let node = new Node("root", new Node("left", new Node("left.left")), new Node("right"));
-assert.deepEqual(deserialize(serialize(node)).left.left.val, "left.left");
+let node = new CustomNode('root', new CustomNode('left', new CustomNode('left.left')), new CustomNode('right'));
+assert.deepEqual(deserialize(serialize(node)).left.left.val, 'left.left');

@@ -25,7 +25,7 @@ const { futimesSync } = require("fs");
 // We don't care about the others. This only takes O(N) time, since we swap each element at most once.
 
 //Then we can iterate through the array and return the index of the first number that doesn't match, just like before.
-function first_missing_positive(nums) {
+function first_missing_positive(nums: number[]) {
     if (nums.length === 0) {
         return 1;
     }
@@ -51,7 +51,7 @@ function first_missing_positive(nums) {
 
 //This is much simpler, but runs in O(N) time and space, whereas the previous algorithm uses no extra space.
 
-function first_missing_positive2(nums) {
+function first_missing_positive2(nums: number[]) {
     let s = new Set(nums);
     let i = 1;
     while (s.has(i)) {

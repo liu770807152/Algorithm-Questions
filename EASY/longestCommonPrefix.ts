@@ -27,15 +27,15 @@
 //（如flight和flow进行比较，依次截取出flow-flo-fl，
 // 直到fl被截取出，此时fl为flight和flow的最长公共前缀）
 
-function longestCommonPrefix(strings) {
+function longestCommonPrefix(strings: string[]): string {
     if (strings.length < 1) {
-        return "";
+        return '';
     }
     let prefix = strings[0];
     for (let s of strings) {
         while (s.indexOf(prefix) !== 0) {
             if (prefix.length === 0) {
-                return "";
+                return '';
             }
             prefix = prefix.slice(0, prefix.length-1);
         }

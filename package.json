@@ -1,0 +1,23 @@
+{
+  "name": "algorithmquestions",
+  "version": "1.0.0",
+  "description": "A collection of algorithm questions categorized from easy level to hard level.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liu770807152/algorithmQuestions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liu770807152/algorithmQuestions/issues"
+  },
+  "homepage": "https://github.com/liu770807152/algorithmQuestions#readme",
+  "devDependencies": {
+    "@types/node": "^16.9.4"
+  }
+}

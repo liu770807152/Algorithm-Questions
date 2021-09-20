@@ -17,7 +17,7 @@ Follow-up: what if you can't use division?
 //In order to find the product of numbers before i, we can generate a list of prefix products.
 // Specifically, the ith element in the list would be a product of all numbers including i. Similarly, we would generate the list of suffix products.
 
-function products(nums) {
+function products(nums: number[]): number[] {
     // Generate prefix products
     let prefix_products = [];
     for (let num of nums) {

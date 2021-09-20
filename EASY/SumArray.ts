@@ -11,7 +11,7 @@ Bonus: Can you do this in one pass?
 // Use a set to remember the numbers we've seen so far.
 // Then for a given number, we can check if there is another number that, if added,
 // would sum to k. This would be O(N) since lookups of sets are O(1) each.
-function two_sum(lst, k) {
+function two_sum(lst: number[], k: number): boolean {
     let seen = new Set();
     for (let num of lst) {
         if (seen.has(k - num)) {
