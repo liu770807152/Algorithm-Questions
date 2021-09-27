@@ -6,6 +6,7 @@
   Input: nums = [0]
   Output: []
 */
+/** 先排序。遍历时记录上一个元素prev，当前还是prev时跳过，否则用双指针法看看该元素后面的元素们，有没有相加等于0的，left>=right时结束，遍历下一个元素。 */
 /**
  * @param {number[]} nums
  * @return {number[][]}

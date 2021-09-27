@@ -19,7 +19,7 @@ Output: [1,1,2,3,4,4]
  *     }
  * }
  */
-
+/** 建立dummy头，当l2 & l2都有值时，暂存大的，连入小的；当其中一个到达底部时，直接连入另一个。返回dummy.next  */
 function mergeTwoLists(
 	l1: ListNode | null,
 	l2: ListNode | null

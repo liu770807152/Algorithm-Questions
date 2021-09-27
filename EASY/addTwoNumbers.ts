@@ -8,7 +8,7 @@ Explanation: 342 + 465 = 807.
 Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 Output: [8,9,9,9,0,0,0,1]
 */
-
+/** 建立dummy头，遍历两个链表：哪个链表有值就加进sum中，根据sum求出cur & carry，迭代到next继续该过程。最后返回dummy.next */
 /**
  * @param {ListNode} l1
  * @param {ListNode} l2

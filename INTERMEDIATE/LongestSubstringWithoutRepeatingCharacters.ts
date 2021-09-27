@@ -11,7 +11,7 @@ Output: 3
 Explanation: The answer is "wke", with the length of 3.
 Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
 */
-
+/** 双指针法，建立一个Set。遍历时，如果Set中已存在就front+1，否则end+1，更新最大距离。 */
 /**
  * @param {string} s
  * @return {number}

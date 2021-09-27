@@ -6,6 +6,7 @@
  * Output: []
  * Definition for singly-linked list.
  */
+/** 两个指针，前面是dummy，后面是第N个节点，然后双管齐下，最后删除dummy.next */
 class ListNode {
 	next: ListNode | null;
 	val: number;

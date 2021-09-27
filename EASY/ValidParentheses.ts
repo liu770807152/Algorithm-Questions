@@ -13,7 +13,7 @@ Output: false
 Input: s = "{[]}"
 Output: true
 */
-
+/** 建立一个栈和一个存储了括号配对的Map，遍历时加入或删除当前括号，最后看看栈是否为空 */
 function isValid(s: string): boolean {
 	const pMap = {
 			')': '(',

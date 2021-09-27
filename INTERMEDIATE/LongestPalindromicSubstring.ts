@@ -8,7 +8,7 @@ Output: "bb"
 Input: s = "ac"
 Output: "a"
 */
-
+/** 回文串可能有中心也可能没有，因此遍历时要注意检查(该元素的前一个, 该元素的后一个) & (该元素, 该元素的后一个) */
 /**
  * @param {string} s
  * @return {string}

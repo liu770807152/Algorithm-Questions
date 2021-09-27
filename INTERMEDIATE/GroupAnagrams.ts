@@ -8,7 +8,7 @@ Output: [[""]]
 Input: strs = ["a"]
 Output: [["a"]]
 */
-
+/** 建立一个代表a-z的数组和Map，遍历时对字母计数，完成后根据数组得出key，存入Map。最后返回Array.from(map.values()) */
 function groupAnagrams(strs: string[]): string[][] {
 	if (strs.length === 0) {
 		return [];
