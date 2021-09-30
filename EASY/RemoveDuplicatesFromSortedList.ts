@@ -17,7 +17,7 @@ Output: [1,2,3]
  *     }
  * }
  */
-
+/** 从第一个开始删除，只要删除了就不往下走，继续看下一个数要不要删除；否则走到下一个数，重复上述过程。 */
 function deleteDuplicates(head: ListNode | null): ListNode | null {
 	if (!head || !head.next) {
 		return head;

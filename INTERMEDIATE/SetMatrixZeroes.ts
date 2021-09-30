@@ -11,6 +11,7 @@ Output: [[0,0,0,0],[0,4,5,0],[0,3,1,0]]
 /**
  Do not return anything, modify matrix in-place instead.
  */
+/** 先标记行和列，再修改。 */
 function setZeroes(matrix: number[][]): void {
 	const rows = new Set<number>(), cols = new Set<number>();
 	const row = matrix.length, col = matrix[0].length;

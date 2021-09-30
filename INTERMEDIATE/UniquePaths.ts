@@ -16,7 +16,7 @@ Output: 28
 Input: m = 7, n = 3
 Output: 28
 */
-
+/** 建立一个二维DP Table，每个位置记录到达此点的路线数量，因此第一行和第一列都是1，剩下的位置将上方和左方的数相加。返回右小角的数即可 */
 function uniquePaths(m: number, n: number): number {
 	const memo: number[][] = [];
 	let row = 0;

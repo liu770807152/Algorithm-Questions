@@ -15,7 +15,7 @@ Explanation: There are three ways to climb to the top.
 2. 1 step + 2 steps
 3. 2 steps + 1 step
 */
-
+/** 斐波那契数列的DP Table */
 function climbStairs(n: number): number {
 	if (n < 2) return 1;
 	const memo: number[] = [];
