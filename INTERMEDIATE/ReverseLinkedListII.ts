@@ -29,7 +29,7 @@ function reverseBetween(head: ListNode | null, left: number, right: number): Lis
 		curr = curr.next;
 	}
 	let prevGuard = prev, currGuard = curr;
-	// reverse sub-list in the middle
+	/** 第一种反转方法：原地反转 */
 	for (let i = left; i <= right; i++) {
 		// next = curr.next;
 		// curr.next = prev;
@@ -37,12 +37,37 @@ function reverseBetween(head: ListNode | null, left: number, right: number): Lis
 		// curr = next;
 		[curr.next, prev, curr] = [prev, curr, curr.next];
 	}
+	/** 第二种反转方法：头插法 */
+	// let dummy = new ListNode(null, null);
+	// for (let i = left; i <= right; i++) {
+	// 	next = curr.next;
+	// 	curr.next = dummy.next;
+	// 	dummy.next = curr;
+	// 	curr = next;
+	// }
+	/** 第三种反转方法：递归 */
+	// function reverse(start: ListNode, time: number): ListNode {
+	// 	if (!time) {
+	// 		return start;
+	// 	}
+	// 	let newStart = reverse(start.next, time--);
+	// 	start.next.next = start;
+	// 	start.next = null;
+	// 	return newStart;
+	// }
+	// if (prevGuard) {
+	// 	// left > 1
+	// 	prevGuard.next = reverse(curr, right - left + 1);
+	// } else {
+	// 	head = reverse(curr, right - left + 1);
+	// }
+
 	if (prevGuard) {
 		// left > 1
 		prevGuard.next = prev;
 	} else {
 		head = prev;
 	}
-	currGuard.next = curr;
+	currGuard.next = next;
 	return head;
 };
