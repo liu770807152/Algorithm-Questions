@@ -17,5 +17,18 @@ Explanation: s becomes "c" while t becomes "b".
 */
 
 function backspaceCompare(s: string, t: string): boolean {
-
+	function removeSpace(s: string): string {
+		const stack = [];
+		for (const c of s) {
+			if (c !== '#') {
+				stack.push(c);
+			} else {
+				if (stack.length) {
+					stack.pop();
+				}
+			}
+		}
+		return stack.join('');
+	}
+	return removeSpace(s) === removeSpace(t);
 };
