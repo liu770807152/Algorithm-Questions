@@ -27,7 +27,9 @@ var longestPalindrome = function (s: string): string {
   if (s.length < 2) return s;
   let maxLength = 1, start = 0;
   for (let i = 0; i < s.length; i++) {
-    expandAroundCenter(i-1, i+1);
+    // aba
+    expandAroundCenter(i - 1, i + 1);
+    // abba
     expandAroundCenter(i, i+1);
   }
   return s.substring(start, start + maxLength);

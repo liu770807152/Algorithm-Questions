@@ -8,6 +8,7 @@ Input: nums = [1]
 Output: 1
 */
 /** 遍历各元素，判断当前元素+存储的最大值大，还是存储的最大值大：如果当前元素+存储的最大值大，更新最大值；如果当前元素更大，最大值更新为当前元素 */
+// 换言之，当前存储的最大值不要是负的，如果是，应该赶紧舍弃
 function maxSubArray(nums: number[]): number {
 	let max = -Infinity, sumOfArr = 0;
 	for (const num of nums) {

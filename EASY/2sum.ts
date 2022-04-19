@@ -23,3 +23,14 @@ Output: Because nums[0] + nums[1] == 9, we return [0, 1].
 	});
 	return result;
 };
+
+ var twoSumImproved = function (nums, target): Array<number> {
+   let diffMap = new Map();
+   nums.forEach((num, index) => {
+     if (diffMap.has(target - num)) {
+       return [diffMap.get(target - num), index];
+     }
+     diffMap.set(num, index);
+   });
+   return [];
+ };

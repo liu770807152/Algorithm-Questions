@@ -26,17 +26,18 @@ var threeSum = function(nums: number[]): number[][] {
     function checkSumOfThree(index: number): void {
       let left = index + 1, right = nums.length - 1;
       while (left < right) {
-        if (nums[index] + nums[left] + nums[right] === 0) {
+        const sum = nums[index] + nums[left] + nums[right];
+        if (sum === 0) {
             result.push([nums[index], nums[left], nums[right]]);
 						left++;
 						right--;
 						while (left < right && nums[left] === nums[left-1]) left++;
             while (left < right && nums[right] === nums[right+1]) right--;
         }
-        else if (nums[index] + nums[left] + nums[right] > 0) {
+        else if (sum > 0) {
             right--;
         }
-        else if (nums[index] + nums[left] + nums[right] < 0) {
+        else if (sum < 0) {
             left++;
         }
       }
